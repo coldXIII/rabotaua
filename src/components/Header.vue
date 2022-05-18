@@ -19,10 +19,16 @@
           <a href=""><i class="far fa-thumbs-up"></i> &nbsp;Рекомендуемые</a>
         </li>
         <li>
-          <a href=""><i class="far fa-file"></i> &nbsp; Мои Резюме</a>
+          <router-link to="/my-cv"
+            ><i class="far fa-file"></i> &nbsp; Мои Резюме</router-link
+          >
         </li>
         <li>
-          <a href=""><i class="fas fa-file"></i> &nbsp; Просмотры Резюме</a>
+          <a href=""
+            ><i class="fas fa-file"></i> &nbsp; Просмотры Резюме ({{
+              counter
+            }})</a
+          >
         </li>
         <li>
           <a href=""><i class="fas fa-user-check"></i> &nbsp; Мои Отклики</a>
@@ -68,7 +74,7 @@
   </div>
 </template>
 <script>
-import { ref } from 'vue';
+import { ref, onBeforeMount } from 'vue';
 import MobileMenu from './MobileMenu.vue';
 export default {
   name: 'AppHeader',
@@ -76,9 +82,20 @@ export default {
   setup() {
     const showMobileMenu = ref(false);
     const signMenu = ref(false);
+    const counter = ref(0);
+
+    onBeforeMount(() => {
+      fetch('https://api.countapi.xyz/update/cold/rabotaua/?amount=1')
+        .then((response) => response.json())
+        .then((data) => {
+          counter.value = data.value;
+        });
+    });
+
     return {
       showMobileMenu,
       signMenu,
+      counter,
     };
   },
 };
@@ -90,7 +107,6 @@ export default {
 .header {
   width: 100%;
   background: $main;
-  margin-bottom: 2rem;
 
   .mobilemenu {
     position: absolute;
@@ -177,6 +193,8 @@ export default {
             transition: all 0.3s ease;
 
             a {
+              width: 100%;
+              height: 100%;
               color: $main;
               transition: all 0.3s ease;
             }

@@ -1,11 +1,11 @@
-import { createRouter, createWebHashHistory } from 'vue-router'
-import Home from '../views/Home.vue'
+import { createRouter, createWebHashHistory } from 'vue-router';
+import Home from '../views/Home.vue';
 
 const routes = [
   {
     path: '/',
     name: 'Home',
-    component: Home
+    component: Home,
   },
   {
     path: '/sign-up',
@@ -17,12 +17,16 @@ const routes = [
     name: 'SignIn',
     component: () => import('../views/SignIn.vue'),
   },
-
-]
+  {
+    path: '/my-cv',
+    name: 'MyCv',
+    component: () => import('../views/MyCv.vue'),
+  },
+];
 
 const router = createRouter({
   history: createWebHashHistory(),
-  routes
-})
+  routes,
+});
 
-export default router
+export default router;

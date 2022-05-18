@@ -224,6 +224,36 @@ export default createStore({
         ],
       },
     ],
+    skills:[
+      {
+        technology:'Programming Languages',
+        programs:['HTML','CSS','JS','TS'], 
+      },
+      {
+        technology:'Preprocessors',
+        programs:['SCSS'], 
+      },
+      {
+        technology:'CSSFrameworks',
+        programs:['Bootstrap','Tailwind','WindiCSS'], 
+      },
+      {
+        technology:'JSFrameworks',
+        programs:['Vue'], 
+      },
+      {
+        technology:'Bundlers',
+        programs:['Webpack','Gulp','Vite'], 
+      },
+      {
+        technology:'Design Tools',
+        programs:['Figma','Photoshop'], 
+      },
+      {
+        technology:'Foreign Languages',
+        programs:['English','Polish','Spanish'], 
+      },
+    ]
   },
   mutations: {},
   actions: {},

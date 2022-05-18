@@ -95,6 +95,7 @@ export default {
 
 <style scoped lang="scss">
 @import '../assets/styles/variables';
+
 form {
   display: flex;
   justify-content: space-around;
@@ -145,7 +146,7 @@ form {
     .status {
       padding: 0.3rem;
       display: flex;
-      justify-content: start;
+      justify-content: flex-start;
       align-items: center;
 
       span {
@@ -212,7 +213,7 @@ form {
     .place {
       padding: 0.3rem;
       display: flex;
-      justify-content: start;
+      justify-content: flex-start;
       align-items: center;
       span {
         color: red;
@@ -221,7 +222,7 @@ form {
     .salary {
       padding: 0.3rem;
       display: flex;
-      justify-content: start;
+      justify-content: flex-start;
       align-items: center;
 
       span {
@@ -235,7 +236,7 @@ form {
     .advantages {
       padding: 0.3rem;
       display: flex;
-      justify-content: start;
+      justify-content: flex-start;
       align-items: center;
       gap: 0.5rem;
       overflow-x: auto;
@@ -252,6 +253,8 @@ form {
         background: linear-gradient(to right, transparent, #a2abce);
         border-radius: 6px;
       }
+    
+    
       span {
         display: inline-block;
         border: 1px solid #ccc;

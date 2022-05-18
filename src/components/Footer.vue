@@ -18,6 +18,5 @@ footer {
   padding: 1rem;
   color: $white;
   font-weight: 500;
-  margin-top: 2rem;
 }
 </style>

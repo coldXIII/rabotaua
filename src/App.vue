@@ -51,12 +51,19 @@ body {
   overflow-x: hidden;
 }
 ::-webkit-scrollbar {
-  width: 20px;
+  width: 10px;
   height: 5px;
 }
 ::-webkit-scrollbar-thumb {
   background: #ff5353;
   border-radius: 0.3rem;
+}
+
+@supports (scrollbar-color: #ff5353 #e5e5e5) {
+  * {
+    scrollbar-color: #ff5353 #e5e5e5;
+    scrollbar-width: thin;
+  }
 }
 
 #app {
@@ -80,6 +87,23 @@ a {
 }
 i {
   cursor: pointer;
+}
+ul,
+li {
+  list-style: none;
+}
+
+.visually-hidden {
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  margin: -1px;
 }
 .uploadcare--widget__button,
 .uploadcare--widget__button:active,
